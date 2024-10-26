@@ -1,0 +1,161 @@
+\newif\ifsubmission
+
+\submissiontrue
+%\submissionfalse
+
+\ifsubmission
+\documentclass[usenames, dvipsnames]{llncs}
+\usepackage[color,reflinks,secparam=\lambda]{crypto/crypto}
+\usepackage[misc,geometry]{ifsym}
+%\let\llncssubparagraph\subparagraph
+%\let\subparagraph\paragraph
+%\usepackage[compact]{titlesec}
+%\let\subparagraph\llncssubparagraph
+\else
+\documentclass[11pt,letterpaper]{article}
+\usepackage[color,reflinks,secparam=\lambda]{crypto/crypto}
+\usepackage[margin=1in]{geometry}
+\def\orcidID#1{\unskip$^{[#1]}$} % added MR 2018-03-10
+\fi
+
+\ifsubmission
+\else
+\usepackage{amsmath,amsthm}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{claim}{Claim}
+\newtheorem{fact}{Fact}
+\newtheorem{definition}{Definition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\fi
+
+\usepackage{graphicx,multirow,array,enumitem,url,stmaryrd}
+%%%%%%%%%%%%%%%%%%%%%%%%
+%warning suppression by
+%https://tex.stackexchange.com/questions/106714/stmaryrd-and-boldsymbol-avoid-warnings
+\SetSymbolFont{stmry}{bold}{U}{stmry}{m}{n} 
+%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{braket,multicol,xspace}
+\usepackage[noend]{algpseudocode}
+\usepackage{ulem}
+\usepackage{caption,subcaption}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{xifthen}
+\usepackage{makecell}
+%\usepackage{orcidlink}
+\usetikzlibrary{positioning,calc,arrows.meta,shapes.geometric}
+\usepackage{listings}
+\lstset{basicstyle=\ttfamily\small,
+        emphstyle=\bfseries\small,
+        language=Python}
+\normalem
+
+\usepackage[capitalize]{cleveref}
+
+
+%%% ORCID Icons
+\definecolor{lime}{HTML}{A6CE39}
+\DeclareRobustCommand{\orcidicon}{%
+\begin{tikzpicture}
+    \draw[lime, fill=lime] (0,0) circle [radius=0.16] node[white] {{\fontfamily{qag}\selectfont \tiny ID}};
+    \draw[white, fill=white] (-0.0625,0.095)
+    circle [radius=0.007];
+\end{tikzpicture}
+\hspace{-2mm}}
+\foreach \x in {A, ..., Z}{
+    \expandafter\xdef\csname orcid\x\endcsname{\noexpand\href{https://orcid.org/\csname orcidauthor\x\endcsname}{\noexpand\orcidicon}}
+    }
+\newcommand{\orcidauthorA}{xxxx-xxxx-xxxx-xxxx
+}
+\newcommand{\orcidauthorB}{yyyy-yyyy-yyyy-yyyy
+}
+\newcommand{\orcidauthorC}{zzzz-zzzz-zzzz-zzzz
+}
+
+\input{macro}
+
+
+\ifsubmission
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+\else
+\setlist[itemize]{leftmargin=*}
+\setlist[enumerate]{leftmargin=*}
+\fi
+
+\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
+%\allowdisplaybreaks
+
+
+\newcommand{\mytitle}{A Template for Cryptologic Papers}
+
+
+\ifsubmission
+
+
+\author{Author 1\inst{1}\orcidA{} \and 
+        Author 2\inst{2}\orcidB{} \and 
+        Author 3\inst{3}\orcidC{}}
+\authorrunning{Author 1 et al.}
+\institute{Institute 1\\\email{a1@iacr.org}
+\and Institute 2\\ \email{a2@iacr.org}
+\and Institute 3\\ \email{a3@iacr.org}
+}
+%\authorrunning{}
+\else
+\author{No Author Given}
+\fi
+
+\ifsubmission
+\title{\mytitle}
+\titlerunning{\mytitle}
+\else
+\title{\Large\textbf{\mytitle}}
+\date{} 
+\fi
+
+\begin{document}
+\maketitle
+\ifsubmission
+\pagestyle{plain}
+\else
+\pagestyle{plain}
+\fi
+\vspace{0pt}
+\input{abstract} % abstract
+\input{intro} % introduction
+\input{overview} % technical overview
+\input{background} % preliminary
+\input{construction} % main constructions
+\input{eval} % evaluation and benchmarks
+
+\ifsubmission
+\else
+\textbf{Acknowledgements.}
+Author 1 is supported by grant No.~xxxxxxxxx, etc.
+\fi
+
+%
+\ifsubmission
+\bibliographystyle{splncs04}
+\else
+\bibliographystyle{alpha}
+\fi
+\bibliography{cryptobib/abbrev3,cryptobib/crypto,crypto/extra}
+%
+\ifsubmission
+
+\else % ePrint version
+\newpage
+\begin{center}
+\LARGE\bf Supplementary Material
+\end{center}
+
+\appendix
+\input{appendix}
+\fi
+%
+\end{document}

@@ -1,0 +1,159 @@
+
+\newcommand{\mkred}[1]{{\color{red}#1}}
+\newcommand\e{\ensuremath{E}\xspace}
+\newcommand{\sample}{\stackrel{{\scriptscriptstyle \mkern4mu _\$}}{\gets}}
+\newcommand{\qe}{\ensuremath{{q_E}}\xspace}
+\newcommand{\qeinx}[1]{\ensuremath{q_{E,#1}}\xspace}
+\newcommand{\qc}{\ensuremath{{q_C}}\xspace}
+\newcommand{\qh}{\ensuremath{{q_H}}\xspace}
+\newcommand{\Qe}{\ensuremath{\Q_E}\xspace}
+\newcommand{\constpilekey}{\ensuremath{\Delta_k}\xspace}
+\newcommand{\constpileinput}{\ensuremath{\Delta_p}\xspace}
+\newcommand{\collbound}{\ensuremath{   \frac{ 20  \qe }{2^{\csp}}
+		+  
+		\frac{640 \qe^2}{2^{2\csp}}   }\xspace}
+\newcommand{\invertbound}{\ensuremath{ \frac{160 \qe}{2^{2\csp}} }\xspace}
+\newcommand{\completepile}{\ensuremath{\mathsf{Pile}\xspace}}
+\newcommand{\extractorcollbound}{\ensuremath{  \frac{80\qe}{2^{\csp}} + \frac{10240 \qe^2}{2^{2\csp}}  }\xspace}
+
+
+
+
+
+
+
+\newcommand{\mylen}{{\ensuremath{\ceil{\ssp \log(\frac{2en}{\ssp}) + \frac{\log \ssp}{2}}}\xspace}}
+\newcommand{\totalgates}{{\ensuremath{\ell}\xspace}}
+\newcommand{\aesi}{\ensuremath{\textsf{AES-128}}\xspace}
+\newcommand{\aesii}{\ensuremath{\textsf{AES-192}}\xspace}
+\newcommand{\aesiii}{\ensuremath{\textsf{AES-256}}\xspace}
+\newcommand{\leftbits}{\ensuremath{\textsf{left}}\xspace}
+\newcommand{\rightbits}{\ensuremath{\textsf{right}}\xspace}
+\newcommand{\const}{\ensuremath{\textsf{C}}\xspace}
+\newcommand{\mac}{{\ensuremath{\sf M}\xspace}}
+\newcommand{\key}{{\ensuremath{\sf K}\xspace}}
+\newcommand{\XOR}{\ensuremath{\sf XOR}\xspace}
+\newcommand{\AND}{\ensuremath{\sf AND}\xspace}
+\newcommand{\LSB}{\ensuremath{{\sf lsb}}\xspace}
+\newcommand{\MSB}{\ensuremath{{\sf msb}}\xspace}
+\newcommand{\ftk}{\ensuremath{\FF_{2^\secparam}}\xspace}
+\newcommand{\ftv}{\ensuremath{\FF_2^\secparam}\xspace}
+\newcommand{\ftp}{\ensuremath{\FF_{2^\ssp}}\xspace}
+\newcommand{\hash}{\ensuremath{{\sf H}}\xspace}
+\newcommand{\sole}{\ensuremath{{\sf sVOLE}}\xspace}
+\newcommand{\shortsection}[1]{\smallskip\noindent{\bf #1}}
+\newcommand{\shortpart}[1]{\smallskip\noindent{\bf #1}}
+\newcommand{\ignore}[1]{}
+\newcommand{\inwire}{\ensuremath{\III_{\sf in}}\xspace}
+\newcommand{\open}{\ensuremath{{\sf Open}}\xspace}
+\newcommand{\bck}{\ensuremath{{\sf BatchCheck}}\xspace} 
+\newcommand{\ztest}{\ensuremath{{\sf CheckZero}}\xspace} 
+\newcommand{\auth}{\ensuremath{{\sf Auth}}\xspace} 
+\newcommand{\A}{\ensuremath{\mathsf{A}}\xspace}
+\newcommand{\B}{\ensuremath{\mathsf{B}}\xspace}
+\newcommand{\sd}{\ensuremath{{\sf seed}}\xspace}
+\newcommand{\prg}{\ensuremath{{\sf PRG}}\xspace}
+\newcommand{\prf}{\ensuremath{{\sf PRF}}\xspace}
+\newcommand{\mand}{\ensuremath{\CCC_\mathsf{and}}\xspace}
+\newcommand{\abort}{\ensuremath{{\sf abort}}\xspace}
+\newcommand{\continue}{\ensuremath{{\sf continue}}\xspace}
+\newcommand{\success}{\ensuremath{{\sf success}}\xspace}
+\newcommand{\true}{\ensuremath{{\sf true}}\xspace}
+\newcommand{\false}{\ensuremath{{\sf false}}\xspace}
+\newcommand{\gc}{\ensuremath{\mathcal{GC}}\xspace}
+\newcommand{\ml}{\ensuremath{{\sf L}}\xspace}
+\newcommand{\feval}{\ensuremath{{\sf GGM}}\xspace}
+\newcommand{\calpha}[1]{\ensuremath{\bar{\alpha}_{#1}}\xspace}
+\newcommand{\etal}{et al.\@\xspace}
+\newcommand{\citdual}{\cite{CCS:BCGIKRS19}\xspace}
+\newcommand{\citprim}{\cite{CCS:SGRR19}\xspace}
+
+
+\newcommand\bone{\text{(B-1)}\xspace}
+\newcommand\boneone{\text{(B-11)}\xspace}
+\newcommand\bonetwo{\text{(B-12)}\xspace}
+\newcommand\btwo{\text{(B-2)}\xspace}
+\newcommand\btwoone{\text{(B-21)}\xspace}
+\newcommand\btwotwo{\text{(B-22)}\xspace}
+\newcommand\bthree{\text{(B-3)}\xspace}
+\newcommand\bthreeone{\text{(B-31)}\xspace}
+\newcommand\bthreetwo{\text{(B-32)}\xspace}
+\newcommand\bfour{\text{(B-4)}\xspace}
+\newcommand\bfourone{\text{(B-41)}\xspace}
+\newcommand\bfourtwo{\text{(B-42)}\xspace}
+\newcommand\bfive{\text{(B-5)}\xspace}
+\newcommand\bsix{\text{(B-6)}\xspace}
+\newcommand\bseven{\text{(B-7)}\xspace}
+
+
+
+\newcommand{\dmac}{{\ensuremath{\sf D}\xspace}}
+%\newcommand{\cskey}[1][]{\ifthenelse{\isempty{#1}}{{\Delta}}{{\Delta}_{#1}}}
+\newcommand{\cskey}{\ensuremath{\Gamma}\xspace}
+\newcommand{\sskey}{\ensuremath{\Gamma \xspace}}
+\newcommand{\funcfont}{\sf}
+\newcommand{\cotinit}{\ensuremath{{\funcfont init}}\xspace}
+\newcommand{\cotgen}{\ensuremath{{\funcfont gen}}\xspace}
+\newcommand{\cotextend}{\ensuremath{{\funcfont extend}}\xspace}
+\newcommand{\cotoutput}{\ensuremath{{\funcfont output}}\xspace}
+\newcommand{\cotmult}{\ensuremath{{\funcfont mult}}\xspace}
+\newcommand{\cmdeq}{\ensuremath{{\funcfont eq}}\xspace}
+\newcommand{\cmdcheckzero}{\ensuremath{{\funcfont checkzero}}\xspace}
+\newcommand{\cmdprove}{\ensuremath{{\funcfont prove}}\xspace}
+\newcommand{\cbit}{\ensuremath{\Lambda}}
+
+
+\newcommand{\fix}{\ensuremath{{\funcfont Fix}}\xspace}
+\newcommand{\bittofield}{\ensuremath{{\funcfont B2F}}\xspace}
+\newcommand{\fieldtobit}{\ensuremath{{\funcfont F2B}}\xspace}
+\newcommand{\checkzero}{\ensuremath{{\funcfont CheckZero}}\xspace}
+\newcommand{\checkzerotwo}{\ensuremath{{\funcfont CheckZero2}}\xspace}
+\newcommand{\inverse}{\ensuremath{{\funcfont Invert}}\xspace}
+\newcommand{\checkio}{\ensuremath{{\funcfont EQCheck}}\xspace}
+\newcommand{\convert}{\ensuremath{{\funcfont Convert1}_{[\cdot]\to\bsh{\cdot}}}\xspace}
+\newcommand{\converttwo}{\ensuremath{{\funcfont Convert2}_{[\cdot]\to\bsh{\cdot}}}\xspace}
+\newcommand{\extbit}{\ensuremath{{\funcfont ExtBit}}\xspace}
+\newcommand{\SA}{\Sim[\A]}
+\newcommand{\SB}{\Sim[\B]}
+
+\newcommand{\com}{\ensuremath{\mathtt{com}}\xspace}
+\newcommand{\decom}{\ensuremath{\mathtt{decom}}\xspace}
+\newcommand{\commit}{\ensuremath{\mathsf{Com}}\xspace}
+\newcommand{\ro}{\ensuremath{\hash_\mathsf{RO}}\xspace}
+
+\newcommand{\pilesize}{\ensuremath{\theta}\xspace}
+
+
+
+
+
+
+\newcommand\dis{\ensuremath{D}\xspace}
+\newcommand\ccr{\ensuremath{{\sf CCR}}\xspace}
+\newcommand\sftccr{\ensuremath{{\sf CCR}}\xspace}
+%\newcommand\OOO{\ensuremath{\mathcal{O}}\xspace}
+%\newcommand\QQQ{\ensuremath{\mathcal{Q}}\xspace}
+\newcommand\Q{\ensuremath{\mathcal{Q}}\xspace}
+\newcommand\rvector{\ensuremath{\mathbf{R}}\xspace}
+\newcommand\newhash{\ensuremath{\widehat{\dm}^{\e}}\xspace}
+\newcommand\dm{\ensuremath{\mathsf{MMO}}\xspace}
+%\newcommand\e{\ensuremath{\mathbf{E}}\xspace}
+\newcommand\uinx{{\sf idx}\xspace}
+\newcommand\keylength{\ensuremath{L}\xspace}
+\newcommand\taillength{\ensuremath{\tau}\xspace}
+\newcommand\ccrhcons{\ensuremath{\mathsf{ccrH}}\xspace}
+%\newcommand\RRR{\ensuremath{\mathcal{R}}\xspace}
+
+
+
+
+\newcommand\experiment{\ensuremath{\mathbf{Exp}}\xspace}
+\newcommand\extractor{\ensuremath{\mathsf{Ext}}\xspace}
+\newcommand\extractbind{\ensuremath{\mathrm{ebind}}\xspace}
+\newcommand\experimentExtBind[1]{\ensuremath{\experiment_{#1}^{\extractbind}(\Adv,\extractor)}\xspace}
+
+\newcommand\extractMultiple{\ensuremath{\mathsf{Multi}}\xspace}
+\newcommand\extractNull{\ensuremath{\mathsf{Null}}\xspace}
+
+
+
